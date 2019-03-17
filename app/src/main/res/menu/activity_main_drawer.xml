@@ -1,37 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_latest_news"
+            android:icon="@drawable/ic_international"
+            android:title="@string/latest_news" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_aus_headlines"
+            android:icon="@drawable/ic_international"
+            android:title="@string/australia_headlines" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_uk_headlines"
+            android:icon="@drawable/ic_international"
+            android:title="@string/uk_headlines" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_us_headlines"
+            android:icon="@drawable/ic_international"
+            android:title="@string/us_headlines" />
+        <item
+            android:id="@+id/nav_news_sections"
+            android:icon="@drawable/ic_sections"
+            android:title="@string/news_sections" />
     </group>
-
-    <item android:title="Communicate">
+    <item android:title="@string/communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_rate_app"
+                android:icon="@drawable/ic_rate"
+                android:title="@string/rate_app" />
+        </menu>
+    </item>
+    <item android:title="@string/info">
+        <menu>
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_feedback"
+                android:icon="@drawable/ic_feedback"
+                android:title="@string/feedback" />
+            <item
+                android:id="@+id/nav_privacy_policy"
+                android:icon="@drawable/ic_policy"
+                android:title="@string/privacy_policy" />
+            <item
+                android:id="@+id/nav_app_version"
+                android:title="@string/version"
+                app:actionViewClass="android.widget.TextView" />
         </menu>
     </item>
 

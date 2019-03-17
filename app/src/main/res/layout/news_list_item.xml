@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/news_list_item_image"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/news_article_image"
+            android:scaleType="fitXY"
+            android:src="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <ImageView
+            android:id="@+id/shadow_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:src="@drawable/bottom_shadow"
+            app:layout_constraintBottom_toBottomOf="@id/news_list_item_image"
+            app:layout_constraintEnd_toEndOf="@id/news_list_item_image"
+            app:layout_constraintStart_toStartOf="@id/news_list_item_image"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/news_list_item_title"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/news_list_item_image"
+            tools:text="News Article Title Goes Here" />
+
+        <TextView
+            android:id="@+id/news_list_item_section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/shadow_bottom"
+            app:layout_constraintStart_toStartOf="@id/shadow_bottom"
+            tools:text="Section" />
+
+        <TextView
+            android:id="@+id/news_list_item_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@id/shadow_bottom"
+            app:layout_constraintEnd_toEndOf="@id/shadow_bottom"
+            tools:text="Date" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

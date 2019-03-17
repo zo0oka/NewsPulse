@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_latest_news">
+
+    <fragment
+        android:id="@+id/nav_edition_news"
+        android:name="com.zo0okadev.newspulse.ui.fragments.EditionNews"
+        tools:layout="@layout/fragment_edition_news">
+        <action
+            android:id="@+id/action_editionNews_to_newsArticleDetails"
+            app:destination="@id/nav_article_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_latest_news"
+        android:name="com.zo0okadev.newspulse.ui.fragments.LatestNews"
+        tools:layout="@layout/fragment_latest_news">
+        <action
+            android:id="@+id/action_latestNews_to_newsArticleDetails"
+            app:destination="@id/nav_article_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_article_details"
+        android:name="com.zo0okadev.newspulse.ui.fragments.NewsArticleDetails"
+        tools:layout="@layout/fragment_news_article_details">
+        <argument
+            android:name="articleId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_news_sections"
+        android:name="com.zo0okadev.newspulse.ui.fragments.NewsSections"
+        tools:layout="@layout/fragment_news_sections">
+        <action
+            android:id="@+id/action_newsSections_to_sectionNews"
+            app:destination="@id/nav_section_news" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_search_results"
+        android:name="com.zo0okadev.newspulse.ui.fragments.SearchResultNews"
+        tools:layout="@layout/fragment_search_result_news">
+        <action
+            android:id="@+id/action_searchResultNews_to_newsArticleDetails"
+            app:destination="@id/nav_article_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_section_news"
+        android:name="com.zo0okadev.newspulse.ui.fragments.SectionNews"
+        tools:layout="@layout/fragment_section_news">
+        <action
+            android:id="@+id/action_sectionNews_to_newsArticleDetails"
+            app:destination="@id/nav_article_details" />
+        <argument
+            android:name="sectionName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_privacy_policy"
+        android:name="com.zo0okadev.newspulse.ui.fragments.PrivacyPolicy"
+        android:label="Privacy Policy"
+        tools:layout="@layout/fragment_privacy_policy" />
+</navigation>
