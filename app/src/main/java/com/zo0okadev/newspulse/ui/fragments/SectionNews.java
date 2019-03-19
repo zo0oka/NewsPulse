@@ -19,10 +19,12 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.paging.PagedList;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 public class SectionNews extends Fragment {
 
-
+    private AppViewModel appViewModel;
+    private SwipeRefreshLayout swipeRefreshLayout;
     private NewsPagedListAdapter newsPagedListAdapter;
 
     public SectionNews() {
@@ -35,6 +37,18 @@ public class SectionNews extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_section_news, container, false);
 
+        appViewModel = ViewModelProviders.of(getActivity()).get(AppViewModel.class);
+
+        swipeRefreshLayout = rootView.findViewById(R.id.section_news_strl);
+        swipeRefreshLayout.setRefreshing(true);
+        swipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                appViewModel.refreshSectionNews();
+            }
+        });
+
         TextView subTitle = getActivity().findViewById(R.id.toolbar_sub_header);
         subTitle.setText(getArguments().getString("sectionName"));
 
@@ -44,11 +58,11 @@ public class SectionNews extends Fragment {
         newsPagedListAdapter = new NewsPagedListAdapter(getActivity());
         recyclerView.setAdapter(newsPagedListAdapter);
 
-        AppViewModel appViewModel = ViewModelProviders.of(getActivity()).get(AppViewModel.class);
         appViewModel.getSectionNews().observe(this, new Observer<PagedList<Article>>() {
             @Override
             public void onChanged(PagedList<Article> articles) {
                 newsPagedListAdapter.submitList(articles);
+                swipeRefreshLayout.setRefreshing(false);
             }
         });
 

@@ -19,8 +19,13 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.paging.PagedList;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 public class LatestNews extends Fragment {
+
+    private SwipeRefreshLayout swipeRefreshLayout;
+    private NewsPagedListAdapter newsPagedListAdapter;
+    private AppViewModel appViewModel;
 
     public LatestNews() {
     }
@@ -31,21 +36,33 @@ public class LatestNews extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_latest_news, container, false);
 
+        appViewModel = ViewModelProviders.of(getActivity()).get(AppViewModel.class);
+
+        swipeRefreshLayout = rootView.findViewById(R.id.latest_news_strl);
+        swipeRefreshLayout.setRefreshing(true);
+        swipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                appViewModel.refreshLatestNews();
+            }
+        });
+
         TextView subTitle = getActivity().findViewById(R.id.toolbar_sub_header);
         subTitle.setText(getString(R.string.latest_news_toolbar_header));
 
         RecyclerView recyclerView = rootView.findViewById(R.id.latest_news_recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(rootView.getContext(), RecyclerView.VERTICAL, false));
-        final NewsPagedListAdapter newsPagedListAdapter = new NewsPagedListAdapter(getActivity());
+        newsPagedListAdapter = new NewsPagedListAdapter(getActivity());
         recyclerView.setAdapter(newsPagedListAdapter);
 
-        AppViewModel appViewModel = ViewModelProviders.of(getActivity()).get(AppViewModel.class);
         appViewModel.getLatestNews()
                 .observe(this, new Observer<PagedList<Article>>() {
                     @Override
                     public void onChanged(PagedList<Article> articles) {
                         newsPagedListAdapter.submitList(articles);
+                        swipeRefreshLayout.setRefreshing(false);
                     }
                 });
 

@@ -72,6 +72,11 @@ public class AppViewModel extends ViewModel {
         allNewsSections = appRepository.getAllNewsSections();
     }
 
+    @SuppressWarnings("ConstantConditions")
+    public void refreshLatestNews() {
+        latestNews.getValue().getDataSource().invalidate();
+    }
+
     public LiveData<PagedList<Article>> getLatestNews() {
         return latestNews;
     }
@@ -106,6 +111,21 @@ public class AppViewModel extends ViewModel {
 
     public void setEditionId(String edition) {
         editionId.postValue(edition);
+    }
+
+    @SuppressWarnings("ConstantConditions")
+    public void refreshEditionNews() {
+        editionNews.getValue().getDataSource().invalidate();
+    }
+
+    @SuppressWarnings("ConstantConditions")
+    public void refreshSearchResults() {
+        searchResultNews.getValue().getDataSource().invalidate();
+    }
+
+    @SuppressWarnings("ConstantConditions")
+    public void refreshSectionNews() {
+        sectionNews.getValue().getDataSource().invalidate();
     }
 }
 

@@ -18,10 +18,13 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.paging.PagedList;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 
 public class EditionNews extends Fragment {
 
+    private SwipeRefreshLayout swipeRefreshLayout;
+    private AppViewModel appViewModel;
 
     public EditionNews() {
     }
@@ -33,7 +36,17 @@ public class EditionNews extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_edition_news, container, false);
 
-        AppViewModel appViewModel = ViewModelProviders.of(getActivity()).get(AppViewModel.class);
+        appViewModel = ViewModelProviders.of(getActivity()).get(AppViewModel.class);
+
+        swipeRefreshLayout = rootView.findViewById(R.id.edition_news_strl);
+        swipeRefreshLayout.setRefreshing(true);
+        swipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                appViewModel.refreshEditionNews();
+            }
+        });
 
         RecyclerView recyclerView = rootView.findViewById(R.id.aus_news_recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -45,6 +58,7 @@ public class EditionNews extends Fragment {
             @Override
             public void onChanged(PagedList<Article> articles) {
                 newsPagedListAdapter.submitList(articles);
+                swipeRefreshLayout.setRefreshing(false);
             }
         });
 

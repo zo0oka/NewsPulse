@@ -19,10 +19,12 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.paging.PagedList;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 public class SearchResultNews extends Fragment {
 
-
+    private AppViewModel appViewModel;
+    private SwipeRefreshLayout swipeRefreshLayout;
     private TextView subTitle;
 
     public SearchResultNews() {
@@ -35,7 +37,17 @@ public class SearchResultNews extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_search_result_news, container, false);
 
-        AppViewModel appViewModel = ViewModelProviders.of(getActivity()).get(AppViewModel.class);
+        appViewModel = ViewModelProviders.of(getActivity()).get(AppViewModel.class);
+
+        swipeRefreshLayout = rootView.findViewById(R.id.search_results_strl);
+        swipeRefreshLayout.setRefreshing(true);
+        swipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                appViewModel.refreshSearchResults();
+            }
+        });
 
         RecyclerView recyclerView = rootView.findViewById(R.id.search_result_news_recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -47,6 +59,7 @@ public class SearchResultNews extends Fragment {
             @Override
             public void onChanged(PagedList<Article> articles) {
                 newsPagedListAdapter.submitList(articles);
+                swipeRefreshLayout.setRefreshing(false);
             }
         });
 
