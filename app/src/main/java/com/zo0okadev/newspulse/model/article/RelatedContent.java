@@ -1,6 +1,6 @@
 package com.zo0okadev.newspulse.model.article;
 
-import android.nfc.Tag;
+import com.zo0okadev.newspulse.model.article.Tag;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
