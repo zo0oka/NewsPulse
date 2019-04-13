@@ -14,9 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!--Use your ADMOB APP ID-->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-4040319527918836~6015658874" />
+            android:value="ADMOB_APP_ID" />
 
         <activity
             android:name=".MainActivity"
