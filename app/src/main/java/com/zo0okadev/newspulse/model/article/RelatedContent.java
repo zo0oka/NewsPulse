@@ -1,7 +1,5 @@
 package com.zo0okadev.newspulse.model.article;
 
-import com.zo0okadev.newspulse.model.article.Tag;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -36,9 +34,6 @@ public class RelatedContent {
     @SerializedName("fields")
     @Expose
     private Fields fields;
-    @SerializedName("tags")
-    @Expose
-    private List<Tag> tags = null;
     @SerializedName("references")
     @Expose
     private List<Object> references = null;
@@ -122,14 +117,6 @@ public class RelatedContent {
 
     public void setFields(Fields fields) {
         this.fields = fields;
-    }
-
-    public List<Tag> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<Tag> tags) {
-        this.tags = tags;
     }
 
     public List<Object> getReferences() {
