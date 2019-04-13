@@ -36,7 +36,7 @@ public class NewsViewHolder extends RecyclerView.ViewHolder {
         if ((article.getFields()) != null) {
             Glide.with(itemView.getContext()).load(article.getFields().getThumbnail()).into(articleImage);
         } else {
-            Glide.with(itemView.getContext()).load("https://via.placeholder.com/300x200.png?text=No+Image+Availabe").into(articleImage);
+            Glide.with(itemView.getContext()).load("https://via.placeholder.com/300x200.png?text=No+Image+Available").into(articleImage);
         }
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override

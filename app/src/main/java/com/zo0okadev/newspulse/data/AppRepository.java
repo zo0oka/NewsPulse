@@ -7,12 +7,9 @@ import com.zo0okadev.newspulse.data.dataSourceFactories.LatestNewsDataSourceFact
 import com.zo0okadev.newspulse.data.dataSourceFactories.SearchResultDataSourceFactory;
 import com.zo0okadev.newspulse.data.dataSourceFactories.SectionNewsDataSourceFactory;
 import com.zo0okadev.newspulse.model.EditionNewsWrapper;
-import com.zo0okadev.newspulse.model.NewsArticleContentWrapper;
 import com.zo0okadev.newspulse.model.SearchResultsWrapper;
 import com.zo0okadev.newspulse.model.SectionNewsWrapper;
-import com.zo0okadev.newspulse.model.article.ArticleResponse;
 import com.zo0okadev.newspulse.model.news.Article;
-import com.zo0okadev.newspulse.model.response.NewsArticleResponseWrapper;
 import com.zo0okadev.newspulse.model.response.SectionsResponseWrapper;
 import com.zo0okadev.newspulse.model.sections.Section;
 import com.zo0okadev.newspulse.utils.Constants;
@@ -97,26 +94,6 @@ public class AppRepository {
             }
         });
         return allNewsSections;
-    }
-
-    public NewsArticleContentWrapper getNewsArticleContent(String articleId) {
-        final MutableLiveData<ArticleResponse> articleResponseMutableLiveData = new MutableLiveData<>();
-        NewsApiClient.getInstance().getNewsArticle(articleId).enqueue(new Callback<NewsArticleResponseWrapper>() {
-            @Override
-            public void onResponse(@NonNull Call<NewsArticleResponseWrapper> call, @NonNull Response<NewsArticleResponseWrapper> response) {
-                if (response.isSuccessful()) {
-                    if (response.body() != null) {
-                        articleResponseMutableLiveData.setValue(response.body().getArticleResponse());
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(@NonNull Call<NewsArticleResponseWrapper> call, @NonNull Throwable t) {
-
-            }
-        });
-        return new NewsArticleContentWrapper(articleResponseMutableLiveData);
     }
 
     public EditionNewsWrapper getEditionNews(String edition) {

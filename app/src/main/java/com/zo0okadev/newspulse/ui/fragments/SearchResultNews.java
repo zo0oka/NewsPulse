@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.zo0okadev.newspulse.R;
 import com.zo0okadev.newspulse.model.news.Article;
@@ -25,7 +24,6 @@ public class SearchResultNews extends Fragment {
 
     private AppViewModel appViewModel;
     private SwipeRefreshLayout swipeRefreshLayout;
-    private TextView subTitle;
 
     public SearchResultNews() {
     }

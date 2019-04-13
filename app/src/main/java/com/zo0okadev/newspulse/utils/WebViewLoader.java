@@ -31,4 +31,8 @@ public class WebViewLoader {
         webView.loadData("<style>img{display: block;margin-left: auto;margin-right: auto;height: auto;max-width: 100% }</style>"
                 + data, "text/html", "UTF-8");
     }
+
+    public void loadUrl(String url) {
+        webView.loadUrl(url);
+    }
 }

@@ -34,7 +34,11 @@ public class RelatedContentViewHolder extends RecyclerView.ViewHolder {
         articleTitle.setText(relatedContent.getWebTitle());
         articleSection.setText(relatedContent.getSectionName());
         articleDate.setText(Utils.getElapsedTime(relatedContent.getWebPublicationDate()));
-        Glide.with(itemView.getContext()).load(relatedContent.getFields().getThumbnail()).into(articleImage);
+        if ((relatedContent.getFields()) != null) {
+            Glide.with(itemView.getContext()).load(relatedContent.getFields().getThumbnail()).into(articleImage);
+        } else {
+            Glide.with(itemView.getContext()).load("https://via.placeholder.com/300x200.png?text=No+Image+Available").into(articleImage);
+        }
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

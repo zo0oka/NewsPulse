@@ -55,7 +55,6 @@ public class NewsPagedListAdapter extends PagedListAdapter<Article, RecyclerView
                 AdView adView = (AdView) bannerViewHolder.itemView;
                 MobileAds.initialize(activity, ADMOB_APP_ID);
                 AdRequest adRequest = new AdRequest.Builder()
-                        .addTestDevice("6D009634C71CA025788CC084D81C450F")
                         .build();
                 adView.loadAd(adRequest);
                 break;

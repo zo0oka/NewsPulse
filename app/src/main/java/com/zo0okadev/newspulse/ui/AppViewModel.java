@@ -97,10 +97,6 @@ public class AppViewModel extends ViewModel {
         return searchResultNews;
     }
 
-    public String getSearchQuery() {
-        return query.getValue();
-    }
-
     public void setSearchQuery(String query) {
         this.query.postValue(query);
     }

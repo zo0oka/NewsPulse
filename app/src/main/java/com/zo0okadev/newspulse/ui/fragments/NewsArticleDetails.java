@@ -40,7 +40,6 @@ public class NewsArticleDetails extends Fragment {
     private RecyclerView recyclerView;
     private ProgressBar progressBar;
     private AdView aboveArticleAd, belowArticleAd, aboveRelatedAd, belowRelatedAd;
-    private TextView subTitle;
 
     public NewsArticleDetails() {
     }
@@ -73,9 +72,7 @@ public class NewsArticleDetails extends Fragment {
                 });
 
         MobileAds.initialize(getContext(), ADMOB_APP_ID);
-        AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice("6D009634C71CA025788CC084D81C450F")
-                .build();
+        AdRequest adRequest = new AdRequest.Builder().build();
 
         aboveArticleAd.loadAd(adRequest);
         belowArticleAd.loadAd(adRequest);

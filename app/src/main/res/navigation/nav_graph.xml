@@ -59,6 +59,5 @@
     <fragment
         android:id="@+id/nav_privacy_policy"
         android:name="com.zo0okadev.newspulse.ui.fragments.PrivacyPolicy"
-        android:label="Privacy Policy"
         tools:layout="@layout/fragment_privacy_policy" />
 </navigation>
