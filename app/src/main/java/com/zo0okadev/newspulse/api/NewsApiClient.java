@@ -1,6 +1,7 @@
 package com.zo0okadev.newspulse.api;
 
 import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -15,12 +16,12 @@ public class NewsApiClient {
         if (sInstance == null) {
 
             // For logging
-//            HttpLoggingInterceptor loggingInterceptor =
-//                    new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
+            HttpLoggingInterceptor loggingInterceptor =
+                    new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
 
             // Building OkHttp client
             OkHttpClient client = new OkHttpClient.Builder()
-//                    .addInterceptor(loggingInterceptor)
+                    .addInterceptor(loggingInterceptor)
                     .build();
 
             // Retrofit Builder
