@@ -7,13 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.zo0okadev.newspulse.R;
-import com.zo0okadev.newspulse.model.sections.Section;
-import com.zo0okadev.newspulse.ui.AppViewModel;
-import com.zo0okadev.newspulse.ui.adapters.SectionsAdapter;
-
-import java.util.List;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
@@ -21,6 +14,13 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.zo0okadev.newspulse.R;
+import com.zo0okadev.newspulse.model.sections.Section;
+import com.zo0okadev.newspulse.ui.AppViewModel;
+import com.zo0okadev.newspulse.ui.adapters.SectionsAdapter;
+
+import java.util.List;
 
 public class NewsSections extends Fragment {
 

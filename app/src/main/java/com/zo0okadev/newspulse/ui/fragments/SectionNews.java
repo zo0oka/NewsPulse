@@ -7,11 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.zo0okadev.newspulse.R;
-import com.zo0okadev.newspulse.model.news.Article;
-import com.zo0okadev.newspulse.ui.AppViewModel;
-import com.zo0okadev.newspulse.ui.adapters.NewsPagedListAdapter;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
@@ -20,6 +15,11 @@ import androidx.paging.PagedList;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import com.zo0okadev.newspulse.R;
+import com.zo0okadev.newspulse.model.news.Article;
+import com.zo0okadev.newspulse.ui.AppViewModel;
+import com.zo0okadev.newspulse.ui.adapters.NewsPagedListAdapter;
 
 public class SectionNews extends Fragment {
 

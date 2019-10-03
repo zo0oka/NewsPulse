@@ -1,12 +1,12 @@
 package com.zo0okadev.newspulse.data.dataSourceFactories;
 
-import com.zo0okadev.newspulse.data.dataSources.LatestNewsDataSource;
-import com.zo0okadev.newspulse.model.news.Article;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.paging.DataSource;
+
+import com.zo0okadev.newspulse.data.dataSources.LatestNewsDataSource;
+import com.zo0okadev.newspulse.model.news.Article;
 
 public class LatestNewsDataSourceFactory extends DataSource.Factory<Integer, Article> {
 

@@ -1,9 +1,9 @@
 package com.zo0okadev.newspulse.model;
 
-import com.zo0okadev.newspulse.model.news.Article;
-
 import androidx.lifecycle.LiveData;
 import androidx.paging.PagedList;
+
+import com.zo0okadev.newspulse.model.news.Article;
 
 public class SearchResultsWrapper {
 

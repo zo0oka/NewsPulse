@@ -1,5 +1,12 @@
 package com.zo0okadev.newspulse.ui;
 
+import androidx.arch.core.util.Function;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Transformations;
+import androidx.lifecycle.ViewModel;
+import androidx.paging.PagedList;
+
 import com.zo0okadev.newspulse.data.AppRepository;
 import com.zo0okadev.newspulse.model.EditionNewsWrapper;
 import com.zo0okadev.newspulse.model.SearchResultsWrapper;
@@ -8,13 +15,6 @@ import com.zo0okadev.newspulse.model.news.Article;
 import com.zo0okadev.newspulse.model.sections.Section;
 
 import java.util.List;
-
-import androidx.arch.core.util.Function;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Transformations;
-import androidx.lifecycle.ViewModel;
-import androidx.paging.PagedList;
 
 public class AppViewModel extends ViewModel {
 

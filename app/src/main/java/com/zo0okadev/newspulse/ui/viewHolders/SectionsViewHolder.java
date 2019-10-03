@@ -4,15 +4,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.zo0okadev.newspulse.R;
-import com.zo0okadev.newspulse.model.sections.Section;
-import com.zo0okadev.newspulse.ui.AppViewModel;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.zo0okadev.newspulse.R;
+import com.zo0okadev.newspulse.model.sections.Section;
+import com.zo0okadev.newspulse.ui.AppViewModel;
 
 public class SectionsViewHolder extends RecyclerView.ViewHolder {
 

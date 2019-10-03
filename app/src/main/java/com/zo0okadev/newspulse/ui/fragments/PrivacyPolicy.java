@@ -8,11 +8,11 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.TextView;
 
-import com.zo0okadev.newspulse.R;
-import com.zo0okadev.newspulse.utils.WebViewLoader;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
+import com.zo0okadev.newspulse.R;
+import com.zo0okadev.newspulse.utils.WebViewLoader;
 
 public class PrivacyPolicy extends Fragment {
 

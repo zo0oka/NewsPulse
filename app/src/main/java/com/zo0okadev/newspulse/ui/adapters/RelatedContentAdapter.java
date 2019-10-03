@@ -3,15 +3,15 @@ package com.zo0okadev.newspulse.ui.adapters;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.zo0okadev.newspulse.R;
 import com.zo0okadev.newspulse.model.article.RelatedContent;
 import com.zo0okadev.newspulse.ui.viewHolders.RelatedContentViewHolder;
 
 import java.util.List;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 public class RelatedContentAdapter extends RecyclerView.Adapter<RelatedContentViewHolder> {
 

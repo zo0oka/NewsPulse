@@ -5,15 +5,15 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.zo0okadev.newspulse.R;
-import com.zo0okadev.newspulse.model.news.Article;
-import com.zo0okadev.newspulse.utils.Utils;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.zo0okadev.newspulse.R;
+import com.zo0okadev.newspulse.model.news.Article;
+import com.zo0okadev.newspulse.utils.Utils;
 
 public class NewsViewHolder extends RecyclerView.ViewHolder {
 

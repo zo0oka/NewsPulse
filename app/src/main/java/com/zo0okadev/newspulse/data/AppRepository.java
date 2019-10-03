@@ -1,6 +1,12 @@
 package com.zo0okadev.newspulse.data;
 
 
+import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.paging.LivePagedListBuilder;
+import androidx.paging.PagedList;
+
 import com.zo0okadev.newspulse.api.NewsApiClient;
 import com.zo0okadev.newspulse.data.dataSourceFactories.EditionNewsDataSourceFactory;
 import com.zo0okadev.newspulse.data.dataSourceFactories.LatestNewsDataSourceFactory;
@@ -18,11 +24,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import androidx.annotation.NonNull;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.paging.LivePagedListBuilder;
-import androidx.paging.PagedList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

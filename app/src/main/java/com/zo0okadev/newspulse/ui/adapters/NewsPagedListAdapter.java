@@ -3,6 +3,11 @@ package com.zo0okadev.newspulse.ui.adapters;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.paging.PagedListAdapter;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -10,11 +15,6 @@ import com.zo0okadev.newspulse.R;
 import com.zo0okadev.newspulse.model.news.Article;
 import com.zo0okadev.newspulse.ui.viewHolders.LargeBannerViewHolder;
 import com.zo0okadev.newspulse.ui.viewHolders.NewsViewHolder;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
-import androidx.paging.PagedListAdapter;
-import androidx.recyclerview.widget.RecyclerView;
 
 import static com.zo0okadev.newspulse.utils.Constants.ADMOB_APP_ID;
 
