@@ -45,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:maxLines="3"
                     android:id="@+id/news_article_title"
-                    android:text="@string/short_lorem_ipsum"
+                    tools:text="@string/short_lorem_ipsum"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="@color/grey_90"
                     android:textStyle="bold" />
@@ -56,7 +56,7 @@
                     android:maxLines="1"
                     android:id="@+id/news_article_section"
                     android:textStyle="bold"
-                    android:text="Section"
+                    tools:text="Section"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
                     android:textColor="@color/colorAccent" />
 
@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:maxLines="1"
                     android:id="@+id/news_article_date"
-                    android:text="Aliquam ac elit, vestibulum turpis."
+                    tools:text="Aliquam ac elit, vestibulum turpis."
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
                     android:textColor="@color/grey_40" />
 
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
                 android:id="@+id/news_article_image"
-                android:src="@drawable/image_11"
+                tools:src="@drawable/image_11"
                 tools:ignore="ContentDescription" />
 
             <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
@@ -126,7 +126,7 @@
                     android:paddingBottom="8dp"
                     android:textStyle="bold"
                     android:textColor="@color/grey_90"
-                    android:text="Related Articles"/>
+                    android:text="@string/related_articles"/>
 
                 <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/article_above_related_content_adView"
