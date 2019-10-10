@@ -17,7 +17,8 @@ public class NewsApiClient {
 
             // For logging
             HttpLoggingInterceptor loggingInterceptor =
-                    new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
+                    new HttpLoggingInterceptor();
+            loggingInterceptor.level(HttpLoggingInterceptor.Level.BODY);
 
             // Building OkHttp client
             OkHttpClient client = new OkHttpClient.Builder()

@@ -35,7 +35,7 @@ import static com.zo0okadev.newspulse.utils.Constants.ADMOB_APP_ID;
 
 public class NewsArticleDetails extends Fragment {
 
-    private TextView newsArticleTitle, newsArticleSection, newsArticleDate, relatedArticlesText;
+    private TextView newsArticleTitle, newsArticleSection, newsArticleDate;
     private ImageView newsArticleImage;
     private WebView newsArticleContent;
     private RecyclerView recyclerView;
@@ -95,7 +95,6 @@ public class NewsArticleDetails extends Fragment {
         progressBar = v.findViewById(R.id.news_article_progressBar);
         newsArticleSection = v.findViewById(R.id.news_article_section);
         newsArticleDate = v.findViewById(R.id.news_article_date);
-        relatedArticlesText = v.findViewById(R.id.related_articles_text);
     }
 
     private void assignValuesToViews(ArticleResponse articleResponse, View v) {
@@ -112,7 +111,6 @@ public class NewsArticleDetails extends Fragment {
         WebViewLoader webViewLoader = new WebViewLoader(newsArticleContent);
         webViewLoader.setSettings();
         webViewLoader.loadHtmlData(articleResponse.getContent().getFields().getBody());
-        relatedArticlesText.setText(getString(R.string.related_articles));
         recyclerView.setLayoutManager(new LinearLayoutManager(v.getContext(), RecyclerView.VERTICAL, false));
         recyclerView.setHasFixedSize(true);
         RelatedContentAdapter relatedContentAdapter = new RelatedContentAdapter(getActivity());
