@@ -45,8 +45,8 @@
                 android:icon="@drawable/ic_policy"
                 android:title="@string/privacy_policy" />
             <item
-                android:id="@+id/nav_app_version"
-                android:title="@string/version"
+                android:id="@+id/nav_about_app"
+                android:title="@string/about_news_pulse"
                 app:actionViewClass="android.widget.TextView" />
         </menu>
     </item>

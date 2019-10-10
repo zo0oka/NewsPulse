@@ -1,5 +1,8 @@
 package com.zo0okadev.newspulse.utils;
 
+import android.content.Context;
+import android.content.pm.PackageManager;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -56,6 +59,10 @@ public class Utils {
 
         SimpleDateFormat targetFormat = new SimpleDateFormat("dd MMMM yyyy HH:mm", Locale.getDefault());
         return targetFormat.format(date);
+    }
+
+    public static String getAppVersionName(Context context) throws PackageManager.NameNotFoundException {
+        return (context.getPackageManager().getPackageInfo(context.getPackageName(), 0)).versionName;
     }
 }
 

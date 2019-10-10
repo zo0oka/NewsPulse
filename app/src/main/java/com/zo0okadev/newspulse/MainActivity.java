@@ -9,15 +9,10 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.material.navigation.NavigationView;
-import com.zo0okadev.newspulse.ui.AppViewModel;
-import com.zo0okadev.newspulse.utils.AppRater;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -31,6 +26,10 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import com.google.android.material.navigation.NavigationView;
+import com.zo0okadev.newspulse.ui.AppViewModel;
+import com.zo0okadev.newspulse.utils.AppRater;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -65,13 +64,9 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        TextView version = (TextView) navigationView.getMenu().findItem(R.id.nav_app_version).getActionView();
-        version.setText(BuildConfig.VERSION_NAME);
-        version.setGravity(Gravity.CENTER);
-
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_latest_news, R.id.nav_edition_news, R.id.nav_news_sections, R.id.nav_privacy_policy)
+                R.id.nav_latest_news, R.id.nav_edition_news, R.id.nav_news_sections, R.id.nav_privacy_policy, R.id.nav_about_app)
                 .setDrawerLayout(drawer)
                 .build();
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration);
@@ -82,7 +77,10 @@ public class MainActivity extends AppCompatActivity
         ConnectivityManager cm =
                 (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
-        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        NetworkInfo activeNetwork = null;
+        if (cm != null) {
+            activeNetwork = cm.getActiveNetworkInfo();
+        }
         return activeNetwork != null && activeNetwork.isConnected();
     }
 
@@ -130,7 +128,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         return true;
     }
@@ -162,6 +160,8 @@ public class MainActivity extends AppCompatActivity
             openFeedback();
         } else if (id == R.id.nav_privacy_policy) {
             navController.navigate(R.id.nav_privacy_policy);
+        } else if (id == R.id.nav_about_app) {
+            navController.navigate(R.id.nav_about_app);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

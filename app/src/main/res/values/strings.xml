@@ -21,4 +21,12 @@
     <string name="latest_news_toolbar_header">Latest World News</string>
     <string name="search">Search</string>
     <string name="news_sections_toolbar_header">- News Sections -</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_news_pulse">About News Pulse</string>
+    <string name="news_pulse">News Pulse</string>
+    <string name="_1_1_2">1.1.2</string>
+    <string name="app_version">1.1.2</string>
+    <string name="last_update">Last Update</string>
+    <string name="last_update_date">10 October 2019</string>
 </resources>
