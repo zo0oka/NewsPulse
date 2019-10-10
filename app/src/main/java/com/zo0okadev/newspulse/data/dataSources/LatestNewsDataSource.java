@@ -1,5 +1,8 @@
 package com.zo0okadev.newspulse.data.dataSources;
 
+import androidx.annotation.NonNull;
+import androidx.paging.PageKeyedDataSource;
+
 import com.zo0okadev.newspulse.api.NewsApiClient;
 import com.zo0okadev.newspulse.model.news.Article;
 import com.zo0okadev.newspulse.model.response.NewsResponseWrapper;
@@ -7,8 +10,6 @@ import com.zo0okadev.newspulse.model.response.NewsResponseWrapper;
 import java.util.Collections;
 import java.util.List;
 
-import androidx.annotation.NonNull;
-import androidx.paging.PageKeyedDataSource;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

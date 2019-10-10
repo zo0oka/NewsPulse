@@ -1,11 +1,11 @@
 package com.zo0okadev.newspulse.model.news;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.zo0okadev.newspulse.model.article.Fields;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.DiffUtil;
 
 public class Article {
 
